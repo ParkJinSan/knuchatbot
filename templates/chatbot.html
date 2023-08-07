@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>챗봇과의 채팅</title>
+    <style>
+        #chatting {
+            height: 200px;
+            width = 80ch;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+        p{
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chatting">
+        {% if qnalist %}
+            {% for question, answer in qnalist %}
+                <div class="qa-item">
+                    <p><strong>질문:</strong> {{ question }}</p>
+                    <p><strong>답변:</strong> {{ answer }}</p>
+                    <p>-----------------------------------------------</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <form action="/chatbot" method="post">
+        <input name = "question" id="question" size="80" placeholder="질문을 입력해보세요!">
+        <button type="submit">질문하기</button><br>
+    </form>
+</body>
+</html>
