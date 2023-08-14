@@ -3,10 +3,56 @@
 <head>
     <link rel="stylesheet" type="text/css" href="index.css">
     <title>챗봇과의 채팅</title>
+    <style>
+    
+    html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(250, 235, 215);
+    }
+    #loginarea{
+        align-items: center;
+    }
+    button{
+        padding: 10px 30px;
+        background-color:darkseagreen;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 3px;
+    }
+    #uid{
+        width: 95%;
+        padding: 8px;
+        margin-bottom: 5px;
+        height: 20px;
+    }
+    #upw{
+        width: 95%;
+        padding: 8px;
+        margin-bottom: 5px;
+        height: 20px;
+    }
+    </style>
 </head>
 <body>
-    <form action="/chatbot" method="get">
-        <button type="submit">채팅하기!</button>
-    </form>
+    <div class="loginarea">
+        <form method="POST">
+            <input type="text" id="uid" name="uid" placeholder="ID를 입력하세요" required><br><br>
+            <input type="password" id="upw" name="upw" placeholder="Password를 입력하세요" required><br><br>
+            <button type="submit">로그인</button>
+        </form> 
+    </div>
+    <div class="buttons">
+        <form action="/makeuser" method="get">
+            <button type="submit">회원가입</button>
+        </form>
+        <form action="/chatbot" method="get">
+            <button type="submit">채팅하기</button>
+        </form>
+    </div>
 </body>
 </html>
