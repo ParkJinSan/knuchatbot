@@ -6,22 +6,22 @@
 </head>
 <body>
     <div id="chatarea">
-        <p>저는 챗봇이에용</p>
         <div id="chatting">
             <div id="chat-content">
                 {% if qnalist %}
                     {% for question, answer in qnalist %}
-                        <div class="qa-item">
+                        <div class="message received">
                             <p><strong>질문:</strong> {{ question }}</p>
+                        </div>
+                        <div class="message sent">
                             <p><strong>답변:</strong> {{ answer }}</p>
-                            <p>-----------------------------------------------</p>
                         </div>
                     {% endfor %}
                 {% endif %}
             </div>
         </div>
-        <form action="/chatbot" method="post">
-            <input name = "question" id="question" size="80" placeholder="챗봇에게 말을 걸어보세요!">
+        <form id="chat-form" action="/chatbot" method="post">
+            <input name="question" id="question" size="80" placeholder="챗봇에게 말을 걸어보세요!">
             <button type="submit">전송</button><br>
         </form>
     </div>

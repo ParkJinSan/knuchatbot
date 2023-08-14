@@ -1,45 +1,87 @@
 
 html, body {
-    background-color: rgba(250, 235, 215);
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #chatarea {
-    text-align: center;
-  }
-  
-  #chatting {
-    padding: 3%;
-    background-color:rgba(255, 255, 240) ;
-    margin-bottom: 20px;
-    height: 400px; /* chatting 영역의 높이 지정 */
-    overflow-y: auto;
-    border-radius: 5px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* form 내부 요소들의 스타일 */
-  #question {
-    width: 95%;
-    padding: 8px;
-    margin-bottom: 10px;
-    height: 25px;
-  }
-  
-  button {
-    padding: 10px 30px;
-    background-color:darkseagreen;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 3px;
-  }
+  background-color: rgba(250, 235, 215);
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#chatarea {
+text-align: center;
+}
+
+#chatting {
+padding: 3%;
+background-color:rgba(255, 255, 240) ;
+margin-bottom: 20px;
+height: 400px; /* chatting 영역의 높이 지정 */
+overflow-y: auto;
+border-radius: 5px;
+}
+
+form {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+/* form 내부 요소들의 스타일 */
+#question {
+padding: 8px;
+margin-bottom: 10px;
+height: 25px;
+border: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+button {
+padding: 10px 30px;
+background-color:darkseagreen;
+color: white;
+border: none;
+cursor: pointer;
+border-radius: 3px;
+}
+
+/* 말풍선 스타일 */
+.message {
+padding: 10px;
+margin: 5px;
+border-radius: 10px;
+max-width: 80%;
+animation-name: slideUp;
+animation-duration: 0.3s; /* 애니메이션 지속 시간 설정 */
+animation-timing-function: ease-out;
+}
+
+.received {
+background-color: #e1e1e1;
+align-self: flex-start;
+}
+
+.sent {
+background-color: darkseagreen;
+color: white;
+align-self: flex-end;
+margin-left: auto;
+}
+
+/* 채팅 입력 폼 스타일 */
+#chat-form {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 20px;
+}
+
+@keyframes slideUp {
+0% {
+  transform: translateY(100%); /* 시작 위치 (영역 아래) */
+  opacity: 0;
+}
+100% {
+  transform: translateY(0%); /* 종료 위치 (영역 안) */
+  opacity: 1;
+}
+}
